@@ -43,7 +43,8 @@ a {
     top: 50%;
     margin: 0 auto;
     filter: blur(10px) contrast(5);
-
+    animation: float_2979 3s linear infinite;
+    transform-origin: 50% 50%;
     .circle {
       position: absolute;
       top: 0;
@@ -51,8 +52,24 @@ a {
       background: #8080ff;
       border-radius: 50%;
       opacity: 1;
+
       &:hover {
         background: #8e8eff;
+      }
+    }
+
+    @keyframes float_2979 {
+      0% {
+        transform: translateY(0);
+      }
+      33.33333% {
+        transform: translateY(-12px);
+      }
+      66.66667% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(0);
       }
     }
 
