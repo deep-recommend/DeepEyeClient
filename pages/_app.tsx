@@ -1,8 +1,20 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.scss";
+import React, { useEffect } from "react";
+import type { AppProps } from "next/app";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "animate.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      easing: "ease-out-sine",
+      duration: 600,
+    });
+  }, []);
+
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default MyApp;
